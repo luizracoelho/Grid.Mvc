@@ -88,8 +88,12 @@ GridMvc = (function ($) {
     * Mark Grid row as selected
     */
     gridMvc.prototype.markRowSelected = function (row) {
+        var status = row.hasClass("grid-row-selected");
+
         this.jqContainer.find(".grid-row.grid-row-selected").removeClass("grid-row-selected");
-        row.addClass("grid-row-selected");
+
+        if (!status)
+            row.addClass("grid-row-selected");
     };
     /***
     * Default Grid.Mvc options
